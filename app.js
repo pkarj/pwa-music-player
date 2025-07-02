@@ -262,3 +262,15 @@ dropzone.addEventListener("drop", e => {
   handleFiles(e.dataTransfer.files);
   dropzone.style.background = "#fff5f5";
 });
+// ✅ 註冊 service-worker 以支援 PWA
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(registration => {
+        console.log('✅ Service Worker 已註冊:', registration.scope);
+      })
+      .catch(error => {
+        console.error('❌ Service Worker 註冊失敗:', error);
+      });
+  });
+}
