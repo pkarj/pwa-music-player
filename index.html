@@ -1,40 +1,44 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>音樂播放器</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css" />
+<link rel="manifest" href="manifest.json">
 </head>
 <body>
-  <div id="dropzone">
-    🔻 拖放 MP3 / MP4 / M4A 到這裡 或 <span class="clickable">點此加入檔案</span>
-    <input type="file" id="filePicker" accept=".mp3,.mp4,.m4a" multiple hidden />
-  </div>
-
-  <div id="playlist"></div>
-
-  <div id="controls">
+<div id="dropzone">
+  <span>🔻 拖放 MP3 / MP4 / M4A</span>
+  <span class="divider">|</span>
+  <span class="clickable">點此加入檔案</span>
+  <input type="file" id="filePicker" accept=".mp3,.mp4,.m4a" multiple hidden />
+</div>
+   <div class="controls">
+    <button onclick="toggleDarkMode()">🌙 暗/亮</button>
     <button onclick="pickFolder()">📁 選擇資料夾</button>
     <button id="singleModeBtn" onclick="toggleSinglePlay()">🔁 單次播放</button>
     <button id="loopModeBtn" onclick="toggleLoop()">🔂 單曲循環</button>
-    <span id="statusMsg"></span>
-    <br/>
-    <button id="installBtn" style="display:none;">📱 安裝 APP</button>
   </div>
+  <div id="playlist"></div>
+
+  <br/>
+    <button id="installBtn" style="display:none;">📱 安裝 APP</button>
+</div>
+
+
 
   <script src="app.js"></script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('service-worker.js')
-          .then(() => console.log("✅ Service Worker 註冊成功"))
-          .catch(err => console.error("❌ Service Worker 註冊失敗", err));
-      });
-    }
+<<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log("✅ Service Worker 註冊成功"))
+        .catch(err => console.error("❌ Service Worker 註冊失敗", err));
+    });
+  }
 
-    // 顯示「安裝 APP」按鈕邏輯
+  // 顯示「安裝 APP」按鈕邏輯
     let deferredPrompt;
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
