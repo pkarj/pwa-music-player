@@ -49,7 +49,7 @@ body {
 .track {
   flex: 1 1 calc(25% - 20px);
   max-width: 380px;
-  min-width: 180px;
+  min-width: 190px;
   border: 1px solid #ccc;
   margin: 5px;
   padding: 10px;
@@ -60,12 +60,12 @@ body {
 }
 .track .number {
   position: absolute;
-  top: 5px;
+  top: 6px;
   right: 10px;
   font-weight: bold;
 }
 .track button {
-  margin: 3px 5px 0 0;
+  margin: 4px 5px 0 0;
 }
 .track audio, .track video {
   width: 100%;
