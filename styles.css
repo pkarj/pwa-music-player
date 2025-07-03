@@ -1,50 +1,100 @@
 body {
   font-family: sans-serif;
-  background-color: #1e1e1e;
-  color: #fff;
+  background: #f2f2f2;
   margin: 0;
-  padding: 1em;
+  padding: 1rem;
 }
-#dropzone {
-  border: 2px dashed red;
-  padding: 12px;
-  margin-bottom: 1em;
-  text-align: center;
-  background-color: #2e2e2e;
-  cursor: pointer;
+.controls {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
 }
 .clickable {
   text-decoration: underline;
-  color: deepskyblue;
+  color: blue;
   cursor: pointer;
 }
+#dropzone {
+  border: 2px dashed red;
+  background-color: #fff5f5;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  margin: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  flex-wrap: wrap;
+}
+
+.clickable {
+  color: blue;
+  text-decoration: underline;
+}
+
+.divider {
+  color: gray;
+}
+
+#playlist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 10px;
+}
 .track {
-  width: 360px;
-  height: 290px;
-  background-color: #333;
+  flex: 1 1 calc(25% - 20px);
+  max-width: 380px;
+  min-width: 190px;
+  border: 1px solid #ccc;
+  margin: 5px;
   padding: 10px;
-  margin: 8px;
-  display: inline-block;
-  vertical-align: top;
+  background: #333;
+  color: white;
+  box-sizing: border-box;
   position: relative;
 }
-.track.playing .play {
-  background-color: red;
-  color: white;
-}
-.number {
+.track .number {
   position: absolute;
-  top: 8px;
-  right: 8px;
-  background: #666;
-  color: white;
-  padding: 2px 6px;
-  border-radius: 4px;
+  top: 6px;
+  right: 10px;
+  font-weight: bold;
+}
+.track button {
+  margin: 4px 5px 0 0;
+}
+.track audio, .track video {
+  width: 100%;
+  margin-top: 5px;
+}
+.track .time {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-top: 5px;
+}
+.playing button.play {
+  color: red;
+  font-weight: bold;
+}
+@media (max-width: 1080px) {
+  .track { flex: 1 1 calc(33.33% - 20px); }
+}
+@media (max-width: 800px) {
+  .track { flex: 1 1 calc(50% - 20px); }
+}
+@media (max-width: 500px) {
+  .track { flex: 1 1 100%; }
+}
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 5px;
 }
 .buttons button {
-  margin: 2px 2px 2px 0;
-}
-.time {
-  font-size: 0.9em;
-  margin-top: 4px;
+  flex: 1 1 auto;
 }
