@@ -1,7 +1,7 @@
 {
   "name": "我的音樂播放器",
   "short_name": "音樂播放器",
-  "./": "./index.html",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#1e1e1e",
   "theme_color": "#cc0000",
