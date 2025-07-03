@@ -1,11 +1,10 @@
 {
-  "name": "我的音樂播放器",
-  "short_name": "音樂播放器",
+  "name": "PWA 音樂播放器",
+  "short_name": "音樂",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#1e1e1e",
   "theme_color": "#cc0000",
-  "orientation": "portrait",
   "icons": [
     {
       "src": "icon-192.png",
