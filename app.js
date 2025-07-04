@@ -1,4 +1,3 @@
-
 let mediaList = [], directoryHandle = null;
 let singlePlayMode = false;
 let loopMode = false;
@@ -96,7 +95,7 @@ function refreshPlaylist() {
     bgBtn.onclick = () => {
       bgMode = !bgMode;
       bgBtn.textContent = bgMode ? "✅ 背景" : "🎧 背景";
-      let targetVolume = bgMode ? 0.25 : 1.0;
+      let targetVolume = bgMode ? 0.20 : 1.0;
       let step = (targetVolume - item.media.volume) / 10;
       let count = 0;
       const fade = setInterval(() => {
